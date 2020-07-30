@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <form method="post">
+    <label for="input-name">Name</label>
+    <input type="text" name="name" id="input-name">
+
+    <label for="input-type">Type</label>
+    <select name="type" id="input-type">
+      <option value="coffee_shop">Coffee Shop</option>
+      <option value="bookstore">Bookstore</option>
+    </select>
+
+    <div class="map-container map-container--no-flex"></div>
+
+    <label for="input-latitude">Latitude</label>
+    <input type="text" name="latitude" id="input-latitude">
+    <label for="input-name">Longitude</label>
+    <input type="text" name="longitude" id="input-longitude">
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+{{> createscript}}
+{{> mapscript}}
+

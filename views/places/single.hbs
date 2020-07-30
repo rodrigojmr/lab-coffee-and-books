@@ -1,0 +1,16 @@
+<div class="place">
+  <div class="place-info">
+    <h2>{{place.name}}</h2>
+
+    <p>{{place.type}}</p>
+  </div>
+  <div class="map-container"></div>
+</div>
+
+<a href="/place/{{place._id}}/update">Update</a>
+<form action="/place/{{place._id}}/delete" method="post">
+  <button type="submit">Delete</button>
+</form>
+
+{{> places}}
+{{> mapscript}}

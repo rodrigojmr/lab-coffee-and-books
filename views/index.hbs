@@ -1,2 +1,18 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+<a href="/place/create">Create a Place</a>
+
+{{#each places}}
+<div class="place">
+  <div class="place-info">
+  <h2>{{name}}</h2>
+  <p>{{type}}</p>
+  <a href="/place/{{_id}}">See Details</a>
+  </div>
+  <div class="map-container"></div>
+</div>
+{{/each}}
+
+{{> places}}
+{{> mapscript}}

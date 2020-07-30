@@ -1,0 +1,60 @@
+<script>
+
+function init() {
+  const mapContainerElement = document.getElementsByClassName('map-container')
+  
+    const map = new window.google.maps.Map(mapContainerElement[0], {
+    center: {
+      lat: 38.75,
+      lng: -9.15
+    },
+    zoom: 11
+  });
+
+  let marker;
+  const latitudeInputElement = document.getElementById('input-latitude');
+  const longitudeInputElement = document.getElementById('input-longitude');
+
+  map.addListener('click', event => {
+    const latitude = event.latLng.lat();
+    const longitude = event.latLng.lng();
+
+    if (marker) {
+      marker.setMap(null);
+    }
+
+    marker = new window.google.maps.Marker({
+      map,
+      position: {
+        lat: latitude,
+        lng: longitude
+      }
+    });
+
+    latitudeInputElement.value = latitude;
+    longitudeInputElement.value = longitude;
+  });
+
+  window.addEventListener(
+  'load',
+  () => {
+  if (latitudeInputElement.value && longitudeInputElement.value) {
+
+    const latNumber = parseFloat(latitudeInputElement.value)
+    const longNumber = parseFloat(longitudeInputElement.value)
+    marker = new window.google.maps.Marker({
+      map,
+      position: {
+        lat: latNumber,
+        lng: longNumber
+      }
+    });
+  }  },
+  false
+);
+}
+
+
+
+
+</script>

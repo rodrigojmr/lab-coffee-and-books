@@ -1,0 +1,46 @@
+<script>
+
+  function init() {
+    const mapContainerElements = document.getElementsByClassName('map-container')
+    
+    if({{{ json places }}}) {
+      const places = {{{ json places }}};
+      for (let place of places) {
+        const i = places.indexOf(place)
+        const map = new window.google.maps.Map(mapContainerElements[i], {
+          center: {
+            lat: place.location.coordinates[0], 
+            lng: place.location.coordinates[1]
+          },
+          zoom: 15
+        });
+
+        const marker = new window.google.maps.Marker({
+          map,
+          position: {
+            lat: place.location.coordinates[0],
+            lng: place.location.coordinates[1]
+          }
+        });
+      }
+    } else {
+        const place = {{{ json place }}}
+        const map = new window.google.maps.Map(mapContainerElements[0], {
+          center: {
+            lat: place.location.coordinates[0], 
+            lng: place.location.coordinates[1]
+          },
+          zoom: 15
+        });
+
+        const marker = new window.google.maps.Marker({
+          map,
+          position: {
+            lat: place.location.coordinates[0],
+            lng: place.location.coordinates[1]
+          }
+        });
+      } 
+  }
+
+</script>

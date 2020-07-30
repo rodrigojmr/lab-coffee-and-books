@@ -76,3 +76,24 @@ textarea {
   min-height: 8em;
   resize: vertical;
 }
+
+.place {
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.place-info {
+  margin-right: auto;
+}
+
+.map-container {
+  height: 20em;
+  flex: 0 0 50%;
+}
+
+.map-container--no-flex {
+  margin: 50px 0;
+  height: 20em;
+  display: block;
+  flex: none;
+}
